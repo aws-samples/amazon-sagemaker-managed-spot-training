@@ -1,5 +1,6 @@
 
 .DS_Store
+.idea/
 .idea/vcs.xml
 .idea/modules.xml
 .idea/misc.xml
