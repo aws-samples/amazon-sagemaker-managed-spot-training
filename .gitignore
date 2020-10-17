@@ -1,2 +1,8 @@
 
 .DS_Store
+.idea/vcs.xml
+.idea/modules.xml
+.idea/misc.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/amazon-sagemaker-managed-spot-training.iml
