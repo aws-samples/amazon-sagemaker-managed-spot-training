@@ -13,7 +13,7 @@ Currently this repository has the following resources:
 
 - **TensorFlow resources:**  
 
-  - [**Training and using checkpointing on SageMaker Managed Spot Training**](managed_spot_training_checkpointing_tensorflow):  This example shows a complete workflow for TensorFlow 2.  To begin, SageMaker Processing is used to transform the dataset.  Next, Local Mode training and Local Mode endpoints are demonstrated for prototyping training and inference code, respectively.  Automatic Model Tuning is used to automate the hyperparameter tuning process.  Additionally, the AWS Step Functions Data Science SDK is used to automate the project workflow for production-ready environments outside notebooks.  **PREREQUISITES:**  From the *tf-2-workflow* directory, upload ONLY the Jupyter notebook `tf-2-workflow.ipynb`.  
+  - [**Training and using checkpointing on SageMaker Managed Spot Training**](managed_spot_training_checkpointing_tensorflow):  This example shows a complete workflow for TensorFlow, showing how to train locally, on the SageMaker Notebook, to verify the training completes successfully. Then you train using SageMaker script mode, using on demand training instances. You continue training using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch based on the checkpoints saved in S3. Finally, you deploy the model and produce a confusion matrix.    
 
 ## Questions?
 
