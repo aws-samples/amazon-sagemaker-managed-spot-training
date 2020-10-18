@@ -13,7 +13,7 @@ Currently this repository has the following resources:
 
 - **TensorFlow resources:**  
 
-  - [**Training and using checkpointing on SageMaker Managed Spot Training**](tensorflow_managed_spot_training_checkpointing):  This example shows a complete workflow for TensorFlow, showing how to train locally, on the SageMaker Notebook, to verify the training completes successfully. Then you train using SageMaker script mode, using on demand training instances. You continue training using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch based on the checkpoints saved in S3. Finally, you deploy the model and produce a confusion matrix.    
+  - [**Training and using checkpointing on SageMaker Managed Spot Training with TensorFlow**](tensorflow_managed_spot_training_checkpointing):  This example shows a complete workflow for TensorFlow, showing how to train locally, on the SageMaker Notebook, to verify the training completes successfully. Then you train using SageMaker script mode, using on demand training instances. You continue training using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch based on the checkpoints saved in S3. Finally, you deploy the model and produce a confusion matrix.    
 
 ## Questions?
 
