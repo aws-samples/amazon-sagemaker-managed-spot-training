@@ -220,7 +220,7 @@ def load_checkpoint_model(checkpoint_path):
     [logging.info(f) for f in files]
     logging.info('------------------------------------')
     logging.info('Checkpoint file for latest epoch: {}'.format(max_epoch_filename))
-    logging.info('Resuming training from epoch: {}'.format(max_epoch_number))
+    logging.info('Resuming training from epoch: {}'.format(int(max_epoch_number)+1))
     logging.info('------------------------------------')
     
     resume_model = load_model(f'{checkpoint_path}/{max_epoch_filename}')
