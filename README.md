@@ -18,6 +18,10 @@ Currently this repository has the following resources:
 
   - [**PyTorch Training and using checkpointing on SageMaker Managed Spot Training**](pytorch_managed_spot_training_checkpointing):  This example shows a complete workflow for PyTorch, showing how to train locally, on the SageMaker Notebook, to verify the training completes successfully. Then you train using SageMaker script mode, using on demand training instances. You continue training using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3. Finally, you deploy the model and produce a confusion matrix.    
 
+- **MXNet resources:**  
+
+  - [**Apache MXNet Training and using checkpointing on SageMaker Managed Spot Training**](mxnet_managed_spot_training_checkpointing):  This example shows a training workflow for Apache MXNet, showing how to train using SageMaker script mode, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.    
+
 - **XGBoost resources:**  
 
   - [**Built-in XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](built-in-xgboost_managed_spot_training_checkpointing):  This example shows a complete workflow for built-in XGBoost, showing how to train using SageMaker XGBoost built-in algorithm, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.     
