@@ -206,25 +206,22 @@ def save_model(model, output):
     logging.info("Model successfully saved at: {}".format(output))
 
 
-def load_checkpoint_model(checkpoint_path):
-    files = [f for f in os.listdir(checkpoint_path) if f.endswith('.' + 'h5')]  
-    logging.info("Found Files: {}".format(files))
-    epoch_numbers = [re.search('(\.*[0-9])(?=\.)',f).group() for f in files]
+def load_model_from_checkpoints(checkpoint_path):
+    checkpoint_files = [file for file in os.listdir(checkpoint_path) if file.endswith('.' + 'h5')]
+    logging.info('------------------------------------------------------')
+    logging.info("Available checkpoint files: {}".format(checkpoint_files))
+    epoch_numbers = [re.search('(\.*[0-9])(?=\.)',file).group() for file in checkpoint_files]
       
     max_epoch_number = max(epoch_numbers)
     max_epoch_index = epoch_numbers.index(max_epoch_number)
-    max_epoch_filename = files[max_epoch_index]
-    
-    logging.info('\nList of available checkpoints:')
-    logging.info('------------------------------------')
-    [logging.info(f) for f in files]
-    logging.info('------------------------------------')
-    logging.info('Checkpoint file for latest epoch: {}'.format(max_epoch_filename))
+    max_epoch_filename = checkpoint_files[max_epoch_index]
+
+    logging.info('Latest epoch checkpoint file name: {}'.format(max_epoch_filename))
     logging.info('Resuming training from epoch: {}'.format(int(max_epoch_number)+1))
-    logging.info('------------------------------------')
+    logging.info('------------------------------------------------------')
     
-    resume_model = load_model(f'{checkpoint_path}/{max_epoch_filename}')
-    return resume_model, int(max_epoch_number)
+    resumed_model_from_checkpoints = load_model(f'{checkpoint_path}/{max_epoch_filename}')
+    return resumed_model_from_checkpoints, int(max_epoch_number)
 
     
 def main(args):
@@ -269,7 +266,7 @@ def main(args):
         model = keras_model_fn(args.learning_rate, args.weight_decay, args.optimizer, args.momentum, mpi, hvd)
         epoch_number = 0
     else:    
-        model, epoch_number = load_checkpoint_model(args.checkpoint_path)
+        model, epoch_number = load_model_from_checkpoints(args.checkpoint_path)
         
     logging.info("Checkpointing to: {}".format(args.checkpoint_path))
 
