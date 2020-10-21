@@ -264,10 +264,10 @@ def main(args):
     # Load model
     if not os.listdir(args.checkpoint_path):
         model = keras_model_fn(args.learning_rate, args.weight_decay, args.optimizer, args.momentum, mpi, hvd)
-        epoch_number = 0
+        initial_epoch_number = 0
     else:    
-        model, epoch_number = load_model_from_checkpoints(args.checkpoint_path)
-        
+        model, initial_epoch_number = load_model_from_checkpoints(args.checkpoint_path)
+         
     logging.info("Checkpointing to: {}".format(args.checkpoint_path))
 
     callbacks = []
@@ -284,7 +284,8 @@ def main(args):
         callbacks.append(ModelCheckpoint(args.checkpoint_path + '/checkpoint-{epoch}.h5'))
         callbacks.append(TensorBoard(log_dir=tensorboard_dir, update_freq='epoch'))
 
-    logging.info("Starting training")
+    logging.info("Starting training from epoch: {}".format(initial_epoch_number+1))
+    
     size = 1
     if mpi:
         size = hvd.size()
@@ -293,7 +294,7 @@ def main(args):
               y=train_dataset[1],
               steps_per_epoch=(num_examples_per_epoch('train') // args.batch_size) // size,
               epochs=args.epochs,
-              initial_epoch=epoch_number,
+              initial_epoch=initial_epoch_number,
               validation_data=validation_dataset,
               validation_steps=(num_examples_per_epoch('validation') // args.batch_size) // size,
               callbacks=callbacks)
