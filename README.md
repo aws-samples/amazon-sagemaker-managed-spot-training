@@ -24,8 +24,8 @@ Currently this repository has the following resources:
 
 - **XGBoost resources:**  
 
-  - [**Built-in XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](built-in-xgboost_managed_spot_training_checkpointing):  This example shows a complete workflow for built-in XGBoost, showing how to train using SageMaker XGBoost built-in algorithm, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.     
-  - [**Script-mode XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](script-mode-xgboost_managed_spot_training_checkpointing):  This example shows a complete workflow for script-mode XGBoost, showing how to train using SageMaker XGBoost algorithm in script mode, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.
+  - [**Built-in XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](xgboost_built_in_managed_spot_training_checkpointing):  This example shows a complete workflow for built-in XGBoost, showing how to train using SageMaker XGBoost built-in algorithm, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.     
+  - [**Script-mode XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](xgboost_script_mode_managed_spot_training_checkpointing):  This example shows a complete workflow for script-mode XGBoost, showing how to train using SageMaker XGBoost algorithm in script mode, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.
 
 
 ## Questions?
