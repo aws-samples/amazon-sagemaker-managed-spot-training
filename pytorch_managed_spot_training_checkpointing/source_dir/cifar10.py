@@ -1,8 +1,7 @@
 import argparse
 import logging
-import sagemaker_containers
 import time
-
+import json
 import os
 
 import torch
@@ -193,12 +192,11 @@ if __name__ == '__main__':
     parser.add_argument('--momentum', type=float, default=0.9, metavar='M', help='momentum (default: 0.9)')
     parser.add_argument('--dist_backend', type=str, default='gloo', help='distributed backend (default: gloo)')
 
-    env = sagemaker_containers.training_env()
-    parser.add_argument('--hosts', type=list, default=env.hosts)
-    parser.add_argument('--current-host', type=str, default=env.current_host)
-    parser.add_argument('--model-dir', type=str, default=env.model_dir)
-    parser.add_argument('--data-dir', type=str, default=env.channel_input_dirs.get('training'))
-    parser.add_argument("--checkpoint-path",type=str,default="/opt/ml/checkpoints",help="Path where checkpoints will be saved.")
-    parser.add_argument('--num-gpus', type=int, default=env.num_gpus)
+    parser.add_argument('--hosts', type=list, default=json.loads(os.environ['SM_HOSTS']))
+    parser.add_argument('--current-host', type=str, default=os.environ['SM_CURRENT_HOST'])
+    parser.add_argument('--model-dir', type=str, default=os.environ['SM_MODEL_DIR'])
+    parser.add_argument('--data-dir', type=str, default=os.environ['SM_CHANNEL_TRAINING'])
+    parser.add_argument("--checkpoint-path",type=str,default="/opt/ml/checkpoints")
+    parser.add_argument('--num-gpus', type=int, default=os.environ['SM_NUM_GPUS'])
 
     _train(parser.parse_args())
