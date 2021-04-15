@@ -2,6 +2,8 @@
 
 This repository contains examples and related resources regarding Amazon SageMaker Managed Spot Training. 
 
+For full details on how this works, read the Machine Learning Blog post at: https://aws.amazon.com/blogs/machine-learning/implement-checkpointing-with-tensorflow-for-amazon-sagemaker-managed-spot-training/
+
 ## Overview
 
 Amazon SageMaker makes it easy to train machine learning models using managed Amazon EC2 Spot instances. Managed spot training can optimize the cost of training models up to 90% over on-demand instances. SageMaker manages the Spot interruptions on your behalf.
