@@ -33,32 +33,7 @@ The repository contains the following resources:
 
   - [**Built-in XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](xgboost_built_in_managed_spot_training_checkpointing):  This example shows a complete workflow for built-in XGBoost, showing how to train using SageMaker XGBoost built-in algorithm, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.     
   - [**Script-mode XGBoost Training and using checkpointing on SageMaker Managed Spot Training**](xgboost_script_mode_managed_spot_training_checkpointing):  This example shows a complete workflow for script-mode XGBoost, showing how to train using SageMaker XGBoost algorithm in script mode, using SageMaker Managed Spot Training, simulating a spot interruption, and see how model training resumes from the latest epoch, based on the checkpoints saved in S3.
-
-```bash
-.
-├── README.MD                                                           <-- This instructions file
-├── cfn                                                                 <-- AWS CloudFormation Templates
-│   └── create-sagemaker-notebook-cfn.yml                               <-- CloudFormation template to creates VPC, subnets, and SageMaker Notebook
-├── mxnet_managed_spot_training_checkpointing                           <-- Apache MXNet Training and using checkpointing
-│   └── mxnet_managed_spot_training_checkpointing.ipynb                 <-- Apache MXNet Training and using checkpointing notebook
-│   └── source_dir                                                      <-- Training script 
-        ├── mnist.py                                                    <-- MXNet Training script
-├── pytorch_managed_spot_training_checkpointing                         <-- PyTorch Training and using checkpointing
-│   └── pytorch_managed_spot_training_checkpointing.ipynb               <-- PyTorch Training and using checkpointing notebook
-│   └── utils_cifar.py                                                  <-- Generates cifar10 dataset
-│   └── source_dir                                                      <-- Training script 
-        ├── cifar10.py                                                  <-- Pytorch Training script
-├── tensorflow_managed_spot_training_checkpointing                      <-- TensorFlow Training and using checkpointing
-│   └── tensorflow_managed_spot_training_checkpointing.ipynb            <-- TensorFlow Training and using checkpointing notebook
-│   └── generate_cifar10_tfrecords.py                                   <-- Generates cifar10 tfrecords
-│   └── source_dir                                                      <-- Training script 
-        ├── cifar10_keras_main.py                                       <-- TensorFlow Training script
-├── xgboost_built_in_managed_spot_training_checkpointing                <-- Built-in XGBoost Training and using checkpointing
-│   └── xgboost_built_in_managed_spot_training_checkpointing.ipynb      <-- Built-in XGBoost Training and using checkpointing notebook
-├── xgboost_script_mode_managed_spot_training_checkpointing             <-- Script mode XGBoost Training and using checkpointing
-│   └── xgboost_script_mode_managed_spot_training_checkpointing.ipynb   <-- Script mode XGBoost Training and using checkpointing notebook
-│   └── abalone.py                                                      <-- XGBoost Training script
-```
+  
 
 ### Installation Instructions
 
